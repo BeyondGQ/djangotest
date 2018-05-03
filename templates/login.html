@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/session/login" method="post">
+    <input type="text" name="username">
+    <input type="text" name="password">
+    <input type="submit" value="上传">
+</form>
+{%  if msg %}
+    <p>{{ msg }}</p>
+{% endif %}
+</body>
+</html>

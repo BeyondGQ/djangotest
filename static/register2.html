@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script language="JavaScript">
+        var register_url = 'http:127.0.0.1:8000/day04/register/';
+        $(function () {
+            $('#btn').click(function () {
+                var formdate = new FormData();
+                var fileobj = $('#head')[0].files[0];
+                var username = $('#username').val();
+                var password = $('password').val();
+                formdate.append('username',username);
+                formdate.append('password',password);
+                formdate.append('head', fileobj);
+                $.ajax(register_url, {
+                    type: 'POST',
+                    date : formdate,
+                    contentType : false,
+                    processDate:
+                        false,
+                    cache:
+                        false
+                })
+                ;
+                return false
+            });
+        })
+
+    </script>
+</head>
+<body>
+<form id="register"
+        action="/dayo4/register/"
+      method="post"
+      enctype="multipart/form-data">
+    <input type="text" name =username>
+    <input type="text" name =password>
+    <input type="file" name =head>
+    <input type="button"  id="btn"  value="注册">
+    <input type="reset" value="重置">
+</form>
+</body>
+</html>

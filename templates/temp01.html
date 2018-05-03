@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{# 模板语法,配合标签使用 #}
+<h3>{{num}}</h3>
+
+复杂数据类型
+<h3>{{li.0}}</h3>
+<h3>{test.age}}</h3>
+<h3>{dic.pwd}}</h3>
+
+{# 遍历可迭代对象 #}
+<ul>
+    {% for item in li %}
+    <li>{{item}}</li>
+    {% endfor %}
+</ul>
+
+{% if num > 0 %}
+    <p>是个大于0 的数</p>
+{% else %}
+    <p>小于或者等于0</p>
+{% endif %}
+</body>
+</html>
